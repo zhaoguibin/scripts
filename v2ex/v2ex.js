@@ -26,7 +26,7 @@ function sign() {
 function signMission(code) {
   let url = {
     url: `https://www.v2ex.com/mission/daily/redeem?once=${code}`,
-    headers: { Cookie: cookieVal }
+    headers: { Cookie: cookieVal,':authority': 'www.v2ex.com' }
   }
   $httpClient.get(url, (error, response, data) => {
     if (data.indexOf('每日登录奖励已领取') >= 0) {
